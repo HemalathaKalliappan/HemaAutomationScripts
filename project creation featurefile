@@ -1,0 +1,53 @@
+Feature: Login and project creation functionality 
+I want to login the application
+
+@login
+Scenario: verify login functionality
+   Given Open the browser
+   When Navigate to the Url
+   When Enter username and password
+   Then validate the outcomes
+
+@Acquisition
+Scenario Outline: Acquisition project creation
+   Given Open the browser
+   When Navigate to the Url
+   When Enter username and password
+   When Click on Acquisition
+   When Enter all the required fields "<Dealname>" and "<AHF Lead>" and "<Bureau>" and "<Project Type>" and "<Deal Overview>"and "<Playbook Stage>" and "<12-Month Census Impact>" and "<Priority>" and "<Status>" and "<Status Explanation>" and "<Other Comments>" 
+   When Click on save
+   
+   Examples: 
+  
+   |Dealname		  	 | AHF Lead 		 | Bureau   | Project Type  |Deal Overview																						| Playbook Stage        |12-Month Census Impact |Closing Date | Priority| Status	| Status Explanation 													 	  | Other Comments												|
+   |Acquistions Pro1			| Asif Iqbal		 | Northern |	Pharmacy    |AIDS Healthcare Foundation (AHF) is a Los Angeles-based global nonprofit providerfor HIV patients	| Prospecting           |<250					|			  |High		|Open		|AIDS Healthcare Foundation (AHF) is a Los Angeles-based global nonprofit	  | As members of the inaugural AIDS Hospice Committee			|
+  
+ @Affiliation
+  Scenario Outline: Affiliation project creation
+    Given Open the browser
+    When Navigate to the Url
+   When Enter username and password
+   When Click on Affiliation
+   When Enter all the required fields in Affiliation "<Dealname>" and "<AHF Lead>" and "<Bureau>" and "<Project Type>" and "<Deal Overview>"and "<Playbook Stage>" and "<12-Month Census Impact>" and "<Priority>" and "<Status>" and "<Status Explanation>" and "<Other Comments>" 
+   When Click on save
+   
+   Examples: 
+  
+   |Dealname		  	 | AHF Lead 		 | Bureau   | Project Type  |Deal Overview																						| Playbook Stage        |12-Month Census Impact |Closing Date | Priority| Status	| Status Explanation 													 		| Other Comments												|
+   |Affiliations Pro1 | Asif Iqbal		 | Northern |	Pharmacy    |AIDS Healthcare Foundation (AHF) is a Los Angeles-based global nonprofit providerfor HIV patients	| Prospecting           |<250					|			  |High		|Open		|AIDS Healthcare Foundation (AHF) is a Los Angeles-based global nonprofit	    | As members of the inaugural AIDS Hospice Committee			|
+     
+ @Special  
+ Scenario Outline: Special project creation
+    Given Open the browser
+    When Navigate to the Url
+    When Enter username and password
+    When Click on special
+    When Enter all the required fields in special "<Deal Name>" and "<Priority>" and "<Status>" and "<Overview>" and "<Status Explanation>" and "<Other Comments>" 
+    When Click on save
+   
+   Examples:  
+   |Deal Name			|Priority	| Status		| Overview																						  | Status Explanation														|Other Comments									   |
+   |Special Pro123  |Medium		|In-Process		|AIDS Healthcare Foundation (AHF) is a Los Angeles-based global nonprofit providerfor HIV patients| AIDS Healthcare Foundation (AHF) is a Los Angeles-based global nonprofit|As members of the inaugural AIDS Hospice Committee|
+   
+   
+   
