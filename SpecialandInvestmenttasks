@@ -1,0 +1,118 @@
+package AHFWebApp.pro;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+
+public class SpecialandInvestment {
+	public WebDriver d1;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id=\"zz11_RootAspMenu\"]/li/ul/li[3]/a")
+	 private  WebElement Speciallink;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id=\"zz11_RootAspMenu\"]/li/ul/li[4]/a")
+	 private  WebElement Investmentlink;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id=\"btnNewProj\"]/input[1]")
+	 private  WebElement createproject;
+
+	 @FindBy(how = How.XPATH, using = "//*[@id=\"DealName_5cb1cc47-2384-4b6a-ab72-4d909088857a_$TextField\"]")
+	 private WebElement DealName;
+	 
+	 @FindBy(how = How.XPATH, using = "//*[@id=\"Priority_a6a04414-a48d-4b88-a6a9-aa062921b4a8_$DropDownChoice\"]")
+	 private WebElement Priority;
+
+	 @FindBy(how = How.XPATH, using = "//*[@id=\"Status_38bf27f5-83e6-4891-bbe2-29d00deafe05_$DropDownChoice\"]")
+	 private WebElement Status;
+	 
+	 @FindBy(how = How.XPATH, using = "//*[@id=\"Statusexplaination_6aeb2b72-fd6e-4d51-bcd4-1a0cc549539c_$TextField\"]")
+	 private WebElement Statusexplaination;
+	 
+	 @FindBy(how = How.XPATH, using = "//*[@id=\"Comments_c64e8ad8-2a4a-492f-af18-10516e40d6a5_$TextField\"]")
+	 private WebElement OtherComments;
+
+	 @FindBy(how = How.XPATH, using = "//*[@id=\"DealOverview_dd631aae-8204-442c-a45a-8fed2bc46af9_$TextField\"]")
+	 private WebElement Overview;
+
+	 @FindBy(how = How.XPATH, using = "//*[@id=\"ClosingDate_87846458-7956-4d2a-ae0e-2362b5f27dbf_$DateTimeFieldDateDatePickerImage\"]")
+	 private WebElement ClosingDate;
+	 
+	 @FindBy(how = How.XPATH, using = "//*[@id=\"DatePickerDiv\"]/div/div/div[2]/table/tbody/tr[6]/td[4]/a")
+	 private WebElement choosedate;
+	 
+	 @FindBy(how = How.ID, using = "ClosingDate_87846458-7956-4d2a-ae0e-2362b5f27dbf_$DateTimeFieldDateDatePickerFrame")
+	 private WebElement iframe;
+
+	 @FindBy(how = How.XPATH, using = "//*[@id=\"ctl00_ctl42_g_53c23beb_0451_4866_823c_818cd6ddfb47_ctl00_toolBarTbl_RightRptControls_ctl00_ctl00_diidIOSaveItem\"]")
+	 private WebElement splsave;
+	 
+
+	 public SpecialandInvestment(WebDriver d1) {
+			PageFactory.initElements(d1, this);
+			}
+	
+	 public void Speciallink()
+	 {
+		 Speciallink.click();
+	 }
+	 public void Investmentlink()
+	 {
+		 Investmentlink.click();
+	 }
+	 public void createproject()
+	 {
+		 createproject.click();
+	 }
+	 public void Dealname(String text)
+	 {
+		 DealName.sendKeys(text);
+	 }
+	 public void priority(String value)
+	 {
+		 Select dropdown =  new Select(Priority);
+			dropdown.selectByValue(value);
+	 }
+	 public void Status(String value)
+	 {
+		 Select dropdown =  new Select(Status);
+			dropdown.selectByValue(value);
+	 }
+	 
+	 public void Statusexplaination(String text)
+	 {
+		 Statusexplaination.sendKeys(text);
+	 }
+	 
+	 public void OtherComments(String text)
+	 {
+		 OtherComments.sendKeys(text);
+	 }
+	 public void Overview(String text)
+	 {
+		 Overview.sendKeys(text);
+	 }
+	 public void ClosingDate()
+	 {
+		 ClosingDate.click();
+	// d1.switchTo().defaultContent();
+	// d1.switchTo().frame(iframe);
+	
+	 }
+	 public void choosedate() throws InterruptedException
+	 {
+			choosedate.click();
+			Thread.sleep(2000);
+		// d1.switchTo().defaultContent();
+	 }
+	 
+	 public void save()
+	 {
+		 splsave.click();
+	 }
+	 
+	
+}
+
