@@ -1,0 +1,66 @@
+Feature: Affiliation task creation 
+Scenario Outline: Prospecting task creation
+ Given Open the browser
+    When Navigate to the Url
+   When Enter username and password
+   When Click on Affiliation
+   When Click on Affiliation project link
+   When Enter all required fields for Prospecting task "<Task Name>" and "<Assigned To>" and "<Task Status>"
+   When Click on save
+ Examples: 
+ 
+	|Task Name		 				|Assigned To	|Task Status |
+	|Affliation Prospecting task	|Asif Iqbal	|In Progress |
+
+Scenario Outline: Deligence task creation
+ Given Open the browser
+    When Navigate to the Url
+   When Enter username and password
+   When Click on Affiliation
+   When Click on Affiliation project link
+   When Enter all required fields for Deligence task "<Task Name>" and "<Assigned To>" and "<Task Status>"
+   When Click on save
+ Examples: 
+ 
+	|Task Name		 				|Assigned To	|Task Status |
+	|Affliation Deligence task		|Asif Iqbal		|In Progress |
+	
+Scenario Outline: Negotiation task creation
+ Given Open the browser
+    When Navigate to the Url
+   When Enter username and password
+   When Click on Affiliation
+   When Click on Affiliation project link
+   When Enter all required fields for Negotiation task "<Task Name>" and "<Assigned To>" and "<Task Status>"
+   When Click on save
+ Examples: 
+ 
+	|Task Name		 					|Assigned To	|Task Status |
+	|Affliation Negotiation task		|Nachiyar Nambi	|In Progress |
+	
+	
+Scenario Outline: Transition task creation
+ Given Open the browser
+    When Navigate to the Url
+   When Enter username and password
+   When Click on Affiliation
+   When Click on Affiliation project link
+   When Enter all required fields for Transition task "<Task Name>" and "<Assigned To>" and "<Task Status>"
+   When Click on save
+ Examples: 
+ 
+	|Task Name		 				|Assigned To	|Task Status |
+	|Affliation Transition task		|Nachiyar Nambi	|In Progress |
+
+Scenario Outline: Performance Monitoring task creation
+ Given Open the browser
+    When Navigate to the Url
+   When Enter username and password
+   When Click on Affiliation
+   When Click on Affiliation project link
+   When Enter all required fields for Performance Monitoring task "<Task Name>" and "<Assigned To>" and "<Task Status>"
+   When Click on save
+ Examples: 
+ 
+	|Task Name		 							|Assigned To	|Task Status |
+	|Affliation Performance Monitoring task		|Nachiyar Nambi	|In Progress |
