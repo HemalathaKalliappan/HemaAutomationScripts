@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [RegressionSuite]">
+  <parameter name="password" value="Hexacorp1234!"/>
+  <parameter name="browser" value="chrome"/>
+  <parameter name="emailid" value="mpexadmin"/>
+  <parameter name="url" value="https://www.mpexsolutions.net/Mpex.web"/>
+  <listeners>
+    <listener class-name="ExtentReportListener.ExtentReporterNG"/>
+  </listeners>
+  <test thread-count="5" name="VerifyModuleLeftNavigationValues(failed)">
+    <classes>
+      <class name="RunnerClass.VerifyLeftNavigationValues">
+        <methods>
+          <include name="VerifyLeftNavigationModuleValues"/>
+          <include name="setUp1"/>
+        </methods>
+      </class> <!-- RunnerClass.VerifyLeftNavigationValues -->
+    </classes>
+  </test> <!-- VerifyModuleLeftNavigationValues(failed) -->
+  <test thread-count="5" name="VerifySystemParameters1(failed)">
+    <classes>
+      <class name="RunnerClass.VerifySystemParameters1">
+        <methods>
+          <include name="setUp1"/>
+          <include name="VerifySystemParametersValues"/>
+        </methods>
+      </class> <!-- RunnerClass.VerifySystemParameters1 -->
+    </classes>
+  </test> <!-- VerifySystemParameters1(failed) -->
+</suite> <!-- Failed suite [RegressionSuite] -->

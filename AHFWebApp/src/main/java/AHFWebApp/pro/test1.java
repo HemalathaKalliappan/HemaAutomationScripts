@@ -19,7 +19,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class test1 {
 	
 	public static void main(String[] args) throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver","E:\\file formats\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","D:\\chromedriver.exe");
 	    WebDriver d1 = new ChromeDriver();
 	    /*d1.get("file:///C:/Users/khemalatha/Desktop/test.html");
 	    List<WebElement> els = d1.findElements(By.id("myText"));
@@ -28,18 +28,20 @@ public class test1 {
 	    		els.get(i).sendKeys("test");
 	    	 
 	    }*/
-	  
-	  
-	    
 	    d1.get("https://qa.cricketsocial.net/");
 	    d1.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		d1.findElement(By.xpath("/html/body/div[8]/header/div[1]/div/div[3]/nav/div/ul/li[5]/a")).click();
 		d1.findElement(By.id("email")).sendKeys("nilakanta@cricketsocial.com");
 		d1.findElement(By.id("pwd")).sendKeys(decodestring("QW5kQDEyMzQ="));
+		
 		d1.findElement(By.xpath("//*[@id=\"login_auth\"]/div[3]/div[2]/button")).click();
+		d1.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		d1.get("https://qa.cricketsocial.net/LeaguePoints/6f8a38ee-d2e9-4d57-8e91-da23bc874b29");
-		d1.findElement(By.xpath("//*[@class='btn btn-default dropdown-toggle']//*[text()='Select Tournament']")).click();
-		d1.findElement(By.xpath("//*[@id=\"listBoxDIv\"]/li[4]/a")).click();
+		Thread.sleep(2000);
+		d1.findElement(By.xpath("//button[@class='btn btn-default dropdown-toggle']")).click();
+		d1.findElement(By.xpath("//a[contains(text(),'See All')]")).click();
+		//*[@id="listBoxDIv"]/li[7]/a
 		String parent = d1.getWindowHandle();
 		String subwindow = null;
 		Set<String> allwindow = d1.getWindowHandles();
@@ -49,10 +51,50 @@ public class test1 {
 		}
 		d1.switchTo().window(subwindow);
 		System.out.println("done");
+		
 		Thread.sleep(2000);
-		d1.findElement(By.xpath("//*[@id=\"myInput\"]")).sendKeys("test");;
+		d1.findElement(By.xpath("//*[@id=\"myInput\"]")).sendKeys("");
+	
 		List<WebElement> els = d1.findElements(By.name("invid"));
-		//d1.findElement(By.linkText("Bargav Test Trophy "));
+	
+		Iterator<WebElement> i = els.iterator();
+		while(i.hasNext()) {
+		    WebElement row = i.next();
+		    if (row.getAttribute("value").equals("26184a37-1dea-40e8-958e-df25d87579b6")) {
+		    	Thread.sleep(2000);
+		    	Actions actions = new Actions(d1);
+		    	actions.moveToElement(row).click().perform();
+		    	
+		}
+		    
+		  //  System.out.println(row.getText());
+		    //System.out.println(row.getAttribute("value"));
+		}
+		
+		   // row.click();
+		  //	  System.out.println(row.getText());
+		 //  System.out.println(row.getAttribute("value"));
+		   
+		/*for (WebElement el : els) {
+			
+			System.out.println("done" + el.getText());
+		//	Thread.sleep(5000);
+			
+	    if (el.equals("fifty check trophy ")) {
+	    	Thread.sleep(5000);
+	    	Actions actions = new Actions(d1);
+	    	actions.moveToElement(el).click().perform();
+	    	//ClickOn(d1,el,10);
+	    	break;
+	}
+	    
+		}*/
+		
+		
+		
+	}
+		
+		/*//d1.findElement(By.linkText("Bargav Test Trophy "));
 		
 		Iterator<WebElement> i = els.iterator();
 		while(i.hasNext()) {
@@ -68,7 +110,7 @@ public class test1 {
 		    
 		}
 	}
-		
+		*/
 		
 		
 		/*System.out.println("elements" +els);
